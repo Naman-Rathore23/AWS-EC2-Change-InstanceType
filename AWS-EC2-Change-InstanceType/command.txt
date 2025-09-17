@@ -1,0 +1,13 @@
+# Stop instance
+aws ec2 stop-instances --instance-ids i-0319c38a771e6f050
+
+# Change instance type
+aws ec2 modify-instance-attribute --instance-id i-0319c38a771e6f050 --instance-type "{\"Value\": \"t2.small\"}"
+
+# Start instance
+aws ec2 start-instances --instance-ids i-0319c38a771e6f050
+
+# Verify instance type
+aws ec2 describe-instances --instance-ids i-0319c38a771e6f050 --query "Reservations[*].Instances[*].InstanceType"
+
+
